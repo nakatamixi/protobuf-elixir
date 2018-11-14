@@ -13,7 +13,7 @@ defmodule Protobuf.Protoc.Generator.Enum do
   end
 
   def generate_field(f) do
-    ":#{f.name}, #{f.number}"
+    %{name: f.name, value: f.number}
   end
 
   defp msg_opts(%{syntax: syntax}) do

@@ -21,5 +21,8 @@ defmodule Protobuf.Protoc.Generator.EnumTest do
     assert msg =~ "use Protobuf, enum: true\n"
     refute msg =~ "defstruct "
     assert msg =~ "field :A, 0\n  field :B, 1\n"
+    assert msg =~ "def a, do: 0\n"
+    assert msg =~ "def b, do: 1\n"
+    assert msg =~ "def fields, do: @fields\n"
   end
 end

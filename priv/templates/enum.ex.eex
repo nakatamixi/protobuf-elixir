@@ -3,6 +3,10 @@ defmodule <%= name %> do
   use Protobuf<%= options %>
 
 <%= Enum.map fields, fn(field) -> %>
-  field <%= field %>
+  field :<%= field.name %>, <%= field.value %>
 <% end %>
+<%= Enum.map fields, fn(field) -> %>
+  def <%= String.downcase field.name %>, do: <%= field.value %>
+<% end %>
+  def fields, do: @fields
 end
